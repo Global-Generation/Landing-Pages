@@ -1,0 +1,336 @@
+ErrorDocument 403 /project7834189/page39916312.html
+ErrorDocument 404 /project7834189/page39916312.html
+
+DirectoryIndex page62702763.html
+
+RewriteEngine On
+
+RewriteCond %{HTTP:X-Forwarded-Proto} =http
+RewriteRule ^(.*)$ https://global-generations\.com/$1 [R=301,L]
+
+RewriteCond %{HTTP:X-Forwarded-Proto} =https
+RewriteCond %{HTTP_HOST} ^www\.global-generations.com [NC]
+RewriteRule ^(.*)$ https://global-generations\.com/$1 [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} /robots.txt
+RewriteCond "%{DOCUMENT_ROOT}/project7834189/robots_%{HTTP_HOST}.txt" -f
+RewriteRule ^(.*)$ robots_%{HTTP_HOST}.txt [NC,L]
+RewriteRule ^usa$ page72800091.html [NC]
+RewriteRule ^usa/$ page72800091.html [NC]
+
+RewriteRule ^sakson_portal$ page66507239.html [NC]
+RewriteRule ^sakson_portal/$ page66507239.html [NC]
+
+RewriteRule ^test$ page61441513.html [NC]
+RewriteRule ^test/$ page61441513.html [NC]
+
+RewriteRule ^publichnaya-oferta$ page51469435.html [NC]
+RewriteRule ^publichnaya-oferta/$ page51469435.html [NC]
+
+RewriteRule ^premium$ page73023793.html [NC]
+RewriteRule ^premium/$ page73023793.html [NC]
+
+RewriteRule ^services$ page73305537.html [NC]
+RewriteRule ^services/$ page73305537.html [NC]
+
+RewriteRule ^blog$ page51807195.html [NC]
+RewriteRule ^blog/$ page51807195.html [NC]
+
+RewriteRule ^individualnyj-dogovor$ page74406555.html [NC]
+RewriteRule ^individualnyj-dogovor/$ page74406555.html [NC]
+
+RewriteRule ^dop-dostup$ page92806196.html [NC]
+RewriteRule ^dop-dostup/$ page92806196.html [NC]
+
+RewriteRule ^perenos-dostupa$ page93118666.html [NC]
+RewriteRule ^perenos-dostupa/$ page93118666.html [NC]
+
+RewriteRule ^kak-postupit-na-grant-v-ssha$ page93122946.html [NC]
+RewriteRule ^kak-postupit-na-grant-v-ssha/$ page93122946.html [NC]
+
+RewriteRule ^error$ page39916312.html [NC]
+RewriteRule ^error/$ page39916312.html [NC]
+
+RewriteRule ^footer-lk$ page52047261.html [NC]
+RewriteRule ^footer-lk/$ page52047261.html [NC]
+
+RewriteRule ^header-lk$ page52354703.html [NC]
+RewriteRule ^header-lk/$ page52354703.html [NC]
+
+RewriteRule ^italy$ page94709066.html [NC]
+RewriteRule ^italy/$ page94709066.html [NC]
+
+RewriteRule ^kak-postupit-v-italiyu$ page93711416.html [NC]
+RewriteRule ^kak-postupit-v-italiyu/$ page93711416.html [NC]
+
+RewriteRule ^italiya-postuplenie-bakalavriat$ page93708486.html [NC]
+RewriteRule ^italiya-postuplenie-bakalavriat/$ page93708486.html [NC]
+
+RewriteRule ^italiya-postuplenie-magistratura$ page93710616.html [NC]
+RewriteRule ^italiya-postuplenie-magistratura/$ page93710616.html [NC]
+
+RewriteRule ^kak-postupit-v-italiyu-test$ page95809726.html [NC]
+RewriteRule ^kak-postupit-v-italiyu-test/$ page95809726.html [NC]
+
+RewriteRule ^italiya-kak-podobrat-vuzy$ page93717726.html [NC]
+RewriteRule ^italiya-kak-podobrat-vuzy/$ page93717726.html [NC]
+
+RewriteRule ^italiya-spisok-universitetov$ page93717046.html [NC]
+RewriteRule ^italiya-spisok-universitetov/$ page93717046.html [NC]
+
+RewriteRule ^italiya-otbor-vuzov$ page93717376.html [NC]
+RewriteRule ^italiya-otbor-vuzov/$ page93717376.html [NC]
+
+RewriteRule ^italiya-kak-podobrat-vuzy-test$ page95819276.html [NC]
+RewriteRule ^italiya-kak-podobrat-vuzy-test/$ page95819276.html [NC]
+
+RewriteRule ^italiya-vneshkolnye-aktivnosti$ page94142306.html [NC]
+RewriteRule ^italiya-vneshkolnye-aktivnosti/$ page94142306.html [NC]
+
+RewriteRule ^aktivnosti-dlya-postupleniya-v-italiyu$ page94140486.html [NC]
+RewriteRule ^aktivnosti-dlya-postupleniya-v-italiyu/$ page94140486.html [NC]
+
+RewriteRule ^italiya-vneshkolnye-aktivnosti-test$ page95826986.html [NC]
+RewriteRule ^italiya-vneshkolnye-aktivnosti-test/$ page95826986.html [NC]
+
+RewriteRule ^italiya-ekzameny-video$ page94148226.html [NC]
+RewriteRule ^italiya-ekzameny-video/$ page94148226.html [NC]
+
+RewriteRule ^italiya-ekzameny-i-testy$ page94144246.html [NC]
+RewriteRule ^italiya-ekzameny-i-testy/$ page94144246.html [NC]
+
+RewriteRule ^italiya-ekzameny-test$ page95831076.html [NC]
+RewriteRule ^italiya-ekzameny-test/$ page95831076.html [NC]
+
+RewriteRule ^italiya-esse-motivacionnye-pisma2$ page94191586.html [NC]
+RewriteRule ^italiya-esse-motivacionnye-pisma2/$ page94191586.html [NC]
+
+RewriteRule ^italiya-esse-motivacionnye-pisma$ page94190966.html [NC]
+RewriteRule ^italiya-esse-motivacionnye-pisma/$ page94190966.html [NC]
+
+RewriteRule ^italiya-esse-test$ page95888716.html [NC]
+RewriteRule ^italiya-esse-test/$ page95888716.html [NC]
+
+RewriteRule ^italiya-rekomendatelnye-pisma2$ page94194206.html [NC]
+RewriteRule ^italiya-rekomendatelnye-pisma2/$ page94194206.html [NC]
+
+RewriteRule ^italiya-rekomendatelnye-pisma$ page94193666.html [NC]
+RewriteRule ^italiya-rekomendatelnye-pisma/$ page94193666.html [NC]
+
+RewriteRule ^italiya-rekomendatelnye-pisma-test$ page95891166.html [NC]
+RewriteRule ^italiya-rekomendatelnye-pisma-test/$ page95891166.html [NC]
+
+RewriteRule ^italiya-sostavlenie-rezyume$ page94173136.html [NC]
+RewriteRule ^italiya-sostavlenie-rezyume/$ page94173136.html [NC]
+
+RewriteRule ^cv-rezyume$ page94166506.html [NC]
+RewriteRule ^cv-rezyume/$ page94166506.html [NC]
+
+RewriteRule ^italiya-sostavlenie-rezyume-test$ page95893766.html [NC]
+RewriteRule ^italiya-sostavlenie-rezyume-test/$ page95893766.html [NC]
+
+RewriteRule ^italiya-portfolio-dlya-dizajn-shkol2$ page94201296.html [NC]
+RewriteRule ^italiya-portfolio-dlya-dizajn-shkol2/$ page94201296.html [NC]
+
+RewriteRule ^italiya-portfolio-dlya-dizajn-shkol$ page94200636.html [NC]
+RewriteRule ^italiya-portfolio-dlya-dizajn-shkol/$ page94200636.html [NC]
+
+RewriteRule ^italiya-kak-postroit-lichnyj-brend$ page94199056.html [NC]
+RewriteRule ^italiya-kak-postroit-lichnyj-brend/$ page94199056.html [NC]
+
+RewriteRule ^italiya-portfolio-test$ page95897036.html [NC]
+RewriteRule ^italiya-portfolio-test/$ page95897036.html [NC]
+
+RewriteRule ^italiya-kommunikaciya2$ page94373426.html [NC]
+RewriteRule ^italiya-kommunikaciya2/$ page94373426.html [NC]
+
+RewriteRule ^italiya-kommunikaciya$ page94202096.html [NC]
+RewriteRule ^italiya-kommunikaciya/$ page94202096.html [NC]
+
+RewriteRule ^italiya-kommunikaciya-test$ page95909866.html [NC]
+RewriteRule ^italiya-kommunikaciya-test/$ page95909866.html [NC]
+
+RewriteRule ^italiya-finansovaya-pomoshch3$ page94375306.html [NC]
+RewriteRule ^italiya-finansovaya-pomoshch3/$ page94375306.html [NC]
+
+RewriteRule ^italiya-finansovaya-pomoshch$ page94373866.html [NC]
+RewriteRule ^italiya-finansovaya-pomoshch/$ page94373866.html [NC]
+
+RewriteRule ^italiya-finansovaya-pomoshch2$ page94374706.html [NC]
+RewriteRule ^italiya-finansovaya-pomoshch2/$ page94374706.html [NC]
+
+RewriteRule ^italiya-finansovaya-pomoshch-test$ page95917136.html [NC]
+RewriteRule ^italiya-finansovaya-pomoshch-test/$ page95917136.html [NC]
+
+RewriteRule ^italiya-dop-informaciya2$ page94376396.html [NC]
+RewriteRule ^italiya-dop-informaciya2/$ page94376396.html [NC]
+
+RewriteRule ^italiya-dop-informaciya$ page94375556.html [NC]
+RewriteRule ^italiya-dop-informaciya/$ page94375556.html [NC]
+
+RewriteRule ^italiya-dop-informaciya-test$ page95919996.html [NC]
+RewriteRule ^italiya-dop-informaciya-test/$ page95919996.html [NC]
+
+RewriteRule ^new$ page46848073.html [NC]
+RewriteRule ^new/$ page46848073.html [NC]
+
+RewriteRule ^phd$ page41718968.html [NC]
+RewriteRule ^phd/$ page41718968.html [NC]
+
+RewriteRule ^graduate$ page41718929.html [NC]
+RewriteRule ^graduate/$ page41718929.html [NC]
+
+RewriteRule ^undergraduate$ page41718766.html [NC]
+RewriteRule ^undergraduate/$ page41718766.html [NC]
+
+RewriteRule ^instrukciya-bakalavriat$ page67996363.html [NC]
+RewriteRule ^instrukciya-bakalavriat/$ page67996363.html [NC]
+
+RewriteRule ^instrukciya-magistratura$ page67996421.html [NC]
+RewriteRule ^instrukciya-magistratura/$ page67996421.html [NC]
+
+RewriteRule ^podbor-universitetov$ page52251355.html [NC]
+RewriteRule ^podbor-universitetov/$ page52251355.html [NC]
+
+RewriteRule ^aktivnosti-i-dostizheniya$ page52268885.html [NC]
+RewriteRule ^aktivnosti-i-dostizheniya/$ page52268885.html [NC]
+
+RewriteRule ^ekzameny-i-testy$ page92363486.html [NC]
+RewriteRule ^ekzameny-i-testy/$ page92363486.html [NC]
+
+RewriteRule ^esse$ page52269661.html [NC]
+RewriteRule ^esse/$ page52269661.html [NC]
+
+RewriteRule ^dopolnitelnye-esse$ page52270115.html [NC]
+RewriteRule ^dopolnitelnye-esse/$ page52270115.html [NC]
+
+RewriteRule ^rekomendatelnye-pisma-bm$ page68041495.html [NC]
+RewriteRule ^rekomendatelnye-pisma-bm/$ page68041495.html [NC]
+
+RewriteRule ^rezyume$ page52269271.html [NC]
+RewriteRule ^rezyume/$ page52269271.html [NC]
+
+RewriteRule ^lichnyj-brend-bm$ page68041423.html [NC]
+RewriteRule ^lichnyj-brend-bm/$ page68041423.html [NC]
+
+RewriteRule ^kommunikaciya-bm$ page68041343.html [NC]
+RewriteRule ^kommunikaciya-bm/$ page68041343.html [NC]
+
+RewriteRule ^finansovaya-pomoshch$ page52252661.html [NC]
+RewriteRule ^finansovaya-pomoshch/$ page52252661.html [NC]
+
+RewriteRule ^obshchie-voprosy-postupleniya$ page52270919.html [NC]
+RewriteRule ^obshchie-voprosy-postupleniya/$ page52270919.html [NC]
+
+RewriteRule ^kak-postupit-na-grant-v-usa$ page96171746.html [NC]
+RewriteRule ^kak-postupit-na-grant-v-usa/$ page96171746.html [NC]
+
+RewriteRule ^us-instrukciya-bakalavriat$ page73606767.html [NC]
+RewriteRule ^us-instrukciya-bakalavriat/$ page73606767.html [NC]
+
+RewriteRule ^us-instrukciya-magistratura$ page73606783.html [NC]
+RewriteRule ^us-instrukciya-magistratura/$ page73606783.html [NC]
+
+RewriteRule ^us-podbor-universitetov$ page73606789.html [NC]
+RewriteRule ^us-podbor-universitetov/$ page73606789.html [NC]
+
+RewriteRule ^us-aktivnosti-i-dostizheniya$ page73606835.html [NC]
+RewriteRule ^us-aktivnosti-i-dostizheniya/$ page73606835.html [NC]
+
+RewriteRule ^us-ekzameny-i-testy$ page92379746.html [NC]
+RewriteRule ^us-ekzameny-i-testy/$ page92379746.html [NC]
+
+RewriteRule ^us-esse$ page73606851.html [NC]
+RewriteRule ^us-esse/$ page73606851.html [NC]
+
+RewriteRule ^us-dopolnitelnye-esse$ page73606859.html [NC]
+RewriteRule ^us-dopolnitelnye-esse/$ page73606859.html [NC]
+
+RewriteRule ^us-rekomendatelnye-pisma-bm$ page73606869.html [NC]
+RewriteRule ^us-rekomendatelnye-pisma-bm/$ page73606869.html [NC]
+
+RewriteRule ^us-rezyume$ page73606839.html [NC]
+RewriteRule ^us-rezyume/$ page73606839.html [NC]
+
+RewriteRule ^us-lichnyj-brend-bm$ page73606829.html [NC]
+RewriteRule ^us-lichnyj-brend-bm/$ page73606829.html [NC]
+
+RewriteRule ^us-kommunikaciya-bm$ page73606817.html [NC]
+RewriteRule ^us-kommunikaciya-bm/$ page73606817.html [NC]
+
+RewriteRule ^us-finansovaya-pomoshch$ page73606805.html [NC]
+RewriteRule ^us-finansovaya-pomoshch/$ page73606805.html [NC]
+
+RewriteRule ^us-obshchie-voprosy-postupleniya$ page73606883.html [NC]
+RewriteRule ^us-obshchie-voprosy-postupleniya/$ page73606883.html [NC]
+
+RewriteRule ^spasibo$ page73188149.html [NC]
+RewriteRule ^spasibo/$ page73188149.html [NC]
+
+RewriteRule ^oferta-sakson_portal$ page68855215.html [NC]
+RewriteRule ^oferta-sakson_portal/$ page68855215.html [NC]
+
+RewriteRule ^privacy$ page39916471.html [NC]
+RewriteRule ^privacy/$ page39916471.html [NC]
+
+RewriteRule ^mediakit$ page40556310.html [NC]
+RewriteRule ^mediakit/$ page40556310.html [NC]
+
+RewriteRule ^company$ page42537732.html [NC]
+RewriteRule ^company/$ page42537732.html [NC]
+
+RewriteRule ^careers$ page43105187.html [NC]
+RewriteRule ^careers/$ page43105187.html [NC]
+
+RewriteRule ^faq$ page72911161.html [NC]
+RewriteRule ^faq/$ page72911161.html [NC]
+
+RewriteRule ^production$ page73358951.html [NC]
+RewriteRule ^production/$ page73358951.html [NC]
+
+RewriteRule ^alisa-sakson$ page73429015.html [NC]
+RewriteRule ^alisa-sakson/$ page73429015.html [NC]
+
+RewriteRule ^lev-avdoshin$ page73380953.html [NC]
+RewriteRule ^lev-avdoshin/$ page73380953.html [NC]
+
+RewriteRule ^reviews$ page82129836.html [NC]
+RewriteRule ^reviews/$ page82129836.html [NC]
+
+RewriteRule ^merch$ page86841956.html [NC]
+RewriteRule ^merch/$ page86841956.html [NC]
+
+RewriteRule ^partnership$ page87102656.html [NC]
+RewriteRule ^partnership/$ page87102656.html [NC]
+
+RewriteRule ^blog-o-postuplenii-za-rubezh$ page94434496.html [NC]
+RewriteRule ^blog-o-postuplenii-za-rubezh/$ page94434496.html [NC]
+
+RewriteRule ^dokumenty$ page94437686.html [NC]
+RewriteRule ^dokumenty/$ page94437686.html [NC]
+
+RewriteRule ^merch-gg$ page94436916.html [NC]
+RewriteRule ^merch-gg/$ page94436916.html [NC]
+
+RewriteRule ^referalnaya-programma$ page73438151.html [NC]
+RewriteRule ^referalnaya-programma/$ page73438151.html [NC]
+
+RewriteRule ^sat_1$ page102081556.html [NC]
+RewriteRule ^sat_1/$ page102081556.html [NC]
+
+RewriteRule ^sat$ page119546686.html [NC]
+RewriteRule ^sat/$ page119546686.html [NC]
+
+RewriteRule ^bakalavriat-v-ssha$ https://global-generations\.com/undergraduate [R=301,NC,L]
+
+RewriteRule ^phd-usa$ https://global-generations\.com/phd [R=301,NC,L]
+
+RewriteRule ^02-25$ https://global-generations\.com/ [R=301,NC,L]
+
+RewriteRule ^product$ https://global-generations\.com/sakson_portal [R=301,NC,L]
+
+RewriteRule ^press$ https://global-generations\.com/mediakit [R=301,NC,L]
+
+RewriteRule ^members/ ma_start.html [NC,L]
+
+

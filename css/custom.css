@@ -1,0 +1,421 @@
+/*Стилизация Личного кабинете / портала*/
+
+/*не показывать группы /учеников с доступными страницами при входе*/
+.tlk-resources__groups {
+    display: none;
+}
+
+.tlk-lectures__tick-wrap {
+    background-color: #52beda !important;
+    left:10px;
+}
+
+.tlk-lectures__course-card-img {
+    left: 10px;
+    background-color: white;
+    padding: 2px 4px;
+    border-radius: 5px;
+}
+
+/*скрыла группы в меню ЛК*/
+.tlk-userbar__popup-groups {
+    display: none;
+}
+
+/*Кнопки внизу уроков*/
+.tlk-switcher__item_prev {
+    background-color: #52beda;
+    border-radius: 160px;
+    box-sizing:border-box;
+    outline: none;
+}
+.tlk-switcher__item_prev a svg{
+    width:24px;
+    height:24px;
+    background-color:white;
+    border-radius:30px;
+    padding:5px;
+    margin-right:10px; 
+}
+
+.tlk-switcher__item_next {
+    background-color: #52beda;
+    border-radius: 160px;
+    box-sizing:border-box;
+    outline: none;
+}
+.tlk-switcher__item_next a svg{
+    width:24px;
+    height:24px;
+    background-color:white;
+    border-radius:30px;
+    padding:5px;
+    margin-right:10px; 
+}
+
+.tlk-switcher {
+    display: flex;
+    gap: 20px;
+    border-top: 0 !important;
+    padding: 40px;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+@media screen and (min-width:1024px){
+.tlk-switcher__item {
+    width: auto !important;
+}
+}
+
+@media screen and (max-width:1023px){
+.tlk-switcher {
+    padding:0 40px 40px 40px !important;
+}
+}
+
+/*Текст на кнопках внизу*/
+.tlk-switcher__title {
+    font-weight: 700 !important;
+    color: #FFFFFF !important;
+}
+
+
+
+/**/
+
+/*Стилизация меню в ЛК*/
+
+/*учебные материалы, назад*/
+.tlk-menu__container .tlk-menu__title-wrap a {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+/*размер иконки в учебных материалах, ссылка назад*/
+.tlk-menu__container .tlk-menu__back-btn {
+    width: 22px !important;
+    height: 22px !important;
+}
+
+
+ /*Меняем цвет в боковом закрытом меню */
+.tlk-menu__panel {
+    background-color: #182849 !important;
+}
+
+/* Цвет в открытом меню */
+@media screen and (min-width:1200px){
+.tlk-menu__container {
+    background-color: #0C1A36 !important;
+}
+}
+/*Ширина открытого меню*/
+@media screen and (min-width:640px){
+.tlk-menu__courses {
+    width: 600px !important;
+    max-width: 600px;
+}
+}
+
+/*Обводка к ссылке вернуться назад*/
+.tlk-menu__title-wrap a {
+    padding: 20px;
+    border-radius: 10px;
+    outline: solid 1px #4a505c;
+}
+/*Вернуться назад стрелка*/
+.tlk-menu__back-btn {
+    box-shadow: none !important;
+    outline:solid 1px #4a505c;
+}
+
+
+/*Заголовок учебные мариалы в меню*/
+.tlk-menu__list .tlk-menu__title {
+    letter-spacing: normal;
+    font-family: 'Mulish';
+    font-weight: 500;
+}
+@media screen and (min-width:640px){
+.tlk-menu__submenu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 10px;
+}
+.tlk-menu__title-wrap a {
+    width: 560px;
+}
+}
+
+@media screen and (max-width:639px){
+.tlk-menu__submenu {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+.tlk-menu__title-wrap a {
+    width: 260px;
+}
+}
+
+.tlk-menu__submenu-item {
+    outline: solid 1px #4a505c;
+    border-radius: 10px;
+    height: 90px;
+}
+
+.tlk-menu__tick, 
+.tlk-menu__submenu .tlk-menu__tick-img {
+    position: absolute !important;
+    top: 10px !important;
+    left: 15px !important;
+}
+
+.tlk-menu__link {
+    position: relative;
+    top: 40px;
+    left: -10px;
+}
+
+
+
+
+/*Стилизация стандартных форм*/
+/*Позиция заголовка в попапе*/
+  .uc-forma .t702__title {
+    padding: 15px auto !important;
+    position: relative;
+}
+
+@media screen and (min-width: 390px) {
+  /*Добавление логотипа в попап*/
+    .uc-forma .t702__title:after {
+    content: url('https://static.tildacdn.com/tild6162-6464-4036-a138-373762656461/GG.svg');
+    display: block;
+    position: absolute;
+    top: -10px;
+    right: 0px;
+}
+}
+/*Отступы перед полями ввода*/
+.uc-forma .t-form__inputsbox {
+    padding-top: 15px;
+}
+
+/*Скругление углов*/
+.uc-forma .t-popup__container {
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+/*Стиль шрифта в заголовках вопросов в попапе*/
+.uc-forma .t-input-title {
+    font-weight: 800;
+    font-size: 15px;
+}
+
+/*Размер отступов после полей ввода*/
+.uc-forma .t-input-group {
+    margin-bottom: 15px !important;
+}
+
+/*Размер шрифта в вариантах ответа -радио*/
+.uc-forma .t-radio__item, .t-checkbox__control {
+    font-size: 14px !important;
+}
+
+/*Поменяла цвет меню в мобильной версии*/
+.t-popup__close {
+     background-color: #ffffff !important; 
+}
+
+/*Стилизация стандартных форм*/
+
+
+
+
+/*Отступы в карточке поста*/
+.t915 .t-feed__post-imgwrapper {
+    margin-bottom: 0 !important;
+}
+
+/*Скругление закрытия поп апа*/
+.t-popup__close {
+        border-radius: 8px;
+}
+}
+
+
+/*Скроллбар для договора*/
+
+/*Задаём высоту и появления скролла для нашего текстового блока*/
+    .tn-elem[data-elem-id="1744944763549"] .tn-atom {
+    display: block !important;
+    overflow-y: auto;
+    scrollbar-width:auto;
+}
+
+@media screen and (min-width: 1200px){
+    .tn-elem[data-elem-id="1744944763549"] .tn-atom {
+       height: 370px !important; 
+    }
+
+}
+
+@media screen and (min-width: 960px){
+    .tn-elem[data-elem-id="1744944763549"] .tn-atom {
+       height: 300px; 
+    }
+
+}
+
+@media (min-width: 640px) and (max-width: 959px){
+    .tn-elem[data-elem-id="1744944763549"] .tn-atom {
+       height: 415px; 
+    }
+
+}
+
+@media (min-width: 480px) and (max-width: 639px){
+    .tn-elem[data-elem-id="1744944763549"] .tn-atom {
+       height: 210px; 
+    }
+
+}
+
+@media screen and (max-width: 479px){
+.tn-elem[data-elem-id="1744944763549"] .tn-atom {
+       height: 265px; 
+    }
+}
+
+
+/*Скроллбар для менторов*/
+/*Задаём высоту и появления скролла для нашего текстового блока*/
+    .tn-elem[data-elem-id="1744259299910"] .tn-atom {
+    display: block !important;
+    overflow-y: auto;
+    scrollbar-width:auto;
+}
+
+@media screen and (min-width: 960px){
+    .tn-elem[data-elem-id="1744259299910"] .tn-atom {
+       height: 280px; 
+    }
+
+}
+
+@media (min-width: 480px) and (max-width: 959px){
+    .tn-elem[data-elem-id="1744259299910"] .tn-atom {
+       height: 200px; 
+    }
+
+}
+
+@media screen and (max-width: 479px){
+.tn-elem[data-elem-id="1744259299910"] .tn-atom {
+       height: 265px; 
+    }
+}
+
+
+
+/* Задаём внешние настройки для scrollbar */
+.uc-mentorry ::-webkit-scrollbar {
+    width: 6px; /* Ширина скроллбара */
+}
+
+
+.uc-mentorry ::-webkit-scrollbar-track {
+    background-color: #F3F3F3; /* Цвет фона */
+}
+
+.uc-mentorry ::-webkit-scrollbar-thumb {
+    border-radius: 10px; /* Скругление углов */
+    background-color: #00C1DE; /* Цвет скроллбара */
+}
+
+/*Стилизация кнопки промокода в корзине*/
+/*Изменение цвета кнопки*/
+.t-inputpromocode__btn {
+    background-color: #12284c !important;
+    text-transform: uppercase;
+    border-radius: 30px !important;
+}
+
+/*Цвет кнопки при наведении*/
+.t-inputpromocode__btn:hover {
+    background-color: #00c1de !important;!i;!;
+}
+
+/*Отступ от поля ввода промокода до кнопки*/
+.t-inputpromocode__wrapper {
+    width: calc(100% + 30px) !important;
+    position: relative;
+    left: -15px;
+    border-collapse: separate;
+    border-spacing: 15px 0px;
+}
+
+/*Отступ в квизе-тесте после шаг:*/
+.t-quiz__counter-title {
+    margin-right: 3px !important;
+}
+
+/*Размер круга под иконку для связи*/
+    .t898__btn_label {
+    width: 70px;
+    height: 70px;
+    box-shadow: 0 0 20px 0 #4e92b296 !important;
+}
+
+/*фон для подвала*/
+    .uc-footer {
+    background-image: url(https://static.tildacdn.com/tild3630-3839-4934-b836-656261313433/Background1.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*Код для страниц личного кабинета, изменения в тесте для доп услуг*/
+.uc-dopy .t806__start-text {
+    font-size: 16px !important;
+}
+
+@media screen and (min-width: 860px){
+    .uc-dopy .t806__start-title {
+        font-size: 40px !important;
+        
+    }
+}
+
+@media (min-width: 640px) and (max-width: 859px) {
+.uc-dopy .t806__start-title {
+        font-size: 36px !important;
+        
+    }
+}
+
+    
+@media (min-width: 460px) and (max-width: 639px) {
+.uc-dopy .t806__start-title {
+        font-size: 24px !important;
+        
+    }
+    
+}
+
+/*Добавление фона тёмно-синей кнопке с паттерном*/
+    .custom-btn-pattern .tn-atom {
+    background-image: url(https://static.tildacdn.com/tild3639-6236-4339-a330-306562636361/btn.svg);
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+
+/*Добавление фона голубой кнопке с паттерном*/
+.custom-btn-blue-patten .tn-atom {
+    background-image: url(https://static.tildacdn.com/tild3266-3230-4666-b365-313163303036/btn100.svg);
+    background-size:cover;
+    background-repeat:no-repeat;
+}
