@@ -6,7 +6,7 @@ Remarketing landing page for Global Generation Google Ads campaigns.
 
 - **Source**: Tilda export (static HTML)
 - **Hosting**: S3 `global-generations-us-site` → CloudFront `dixmq96bmzcjx.cloudfront.net`
-- **Domain**: `global-generations.us` (migrating from SiteGround → Route 53)
+- **Domain**: `global-generations.us` (AWS Route 53 Domains, auto-renew, expires 2027-05-15)
 - **CloudFront ID**: `EXJ3W80LP8A65`
 - **Route 53 Zone**: `Z054617150JR83K8E03X`
 
@@ -44,10 +44,15 @@ DYLD_LIBRARY_PATH=/opt/homebrew/opt/expat/lib \
 - **UTM**: `utm_source=google&utm_medium=cpc&utm_campaign=gg-pmax-yt`
 - **GTM**: `GTM-W3FBQXRC`
 
-## Domain Migration Status
+## Domain Migration — Complete
 
-- **From**: SiteGround (Tucows/OpenSRS, IP `34.174.111.243`)
-- **To**: AWS Route 53
-- **Status**: `pendingTransfer` since 2026-04-22
-- **Domain expires**: 2026-05-15
-- After transfer: NS auto-switch to AWS, verify SSL, cancel SiteGround
+- **2026-04-22**: Transfer initiated SiteGround → AWS Route 53 Domains
+- **2026-04-27**: Transfer completed, NS switched to Route 53
+- **NS at registrar**: `ns-1903.awsdns-45.co.uk`, `ns-345.awsdns-43.com`, `ns-816.awsdns-38.net`, `ns-1295.awsdns-33.org`
+- **Propagation**: 24-48h from 2026-04-27 (old NS TTL was 6h)
+- **TODO**: cancel SiteGround hosting subscription after propagation
+- **60-day registrar lock** (`clientTransferProhibited`/`serverTransferProhibited`) until ~2026-06-26 — standard post-transfer security
+
+## Push access
+
+The `LevAvdoshin-Truv` GitHub account has no push rights to this repo. Use `gh auth switch --user LevAvdoshin` before pushing.
