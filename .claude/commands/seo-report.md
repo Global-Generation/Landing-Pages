@@ -5,9 +5,9 @@ argument-hint: [optional "brief" = 3 строки + статус]
 
 # /seo-report — Monthly SEO report
 
-**Target file:** `docs/seo_mapping.md` (обновляет Domain Metrics + Recovery Status в SEO Health)
-**Aux output:** `docs/seo-report-YYYY-MM-DD.md`
-**Template:** `references/report-template.md`
+**Target file:** `seo/mapping.md` (обновляет Domain Metrics + Recovery Status в SEO Health)
+**Aux output:** `seo/reports/seo-report-YYYY-MM-DD.md`
+**Template:** `seo/references/report-template.md`
 **Argument:** `$ARGUMENTS` — `brief` для краткого режима.
 **Requires:** ничего внешнего — реюзает existing data.
 
@@ -22,7 +22,7 @@ argument-hint: [optional "brief" = 3 строки + статус]
 
 ## Step 2: Domain health MoM
 
-Из `docs/seo-trends.md` достать строки этого месяца и прошлого. Посчитать Δ:
+Из `seo/trends.md` достать строки этого месяца и прошлого. Посчитать Δ:
 
 | Metric | Этот месяц | Прошлый | Δ |
 |---|---|---|---|
@@ -36,7 +36,7 @@ argument-hint: [optional "brief" = 3 строки + статус]
 
 ## Step 3: Ranking buckets
 
-Из последнего SEMrush-снапшота (`docs/seo-semrush-{latest}.md` либо `docs/seo_mapping.md`):
+Из последнего SEMrush-снапшота (`seo/reports/seo-semrush-{latest}.md` либо `seo/mapping.md`):
 
 | Bucket | Кол-во keywords | Δ vs прошлый месяц |
 |---|---|---|
@@ -102,7 +102,7 @@ Top 3 priorities:
 
 ## Step 10: Save + print
 
-Полный отчёт → `docs/seo-report-YYYY-MM-DD.md`. Brief — только в чат, файл не пишем.
+Полный отчёт → `seo/reports/seo-report-YYYY-MM-DD.md`. Brief — только в чат, файл не пишем.
 
 ---
 

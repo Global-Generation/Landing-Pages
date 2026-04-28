@@ -1,21 +1,21 @@
 ---
-description: Кравлит реальный сайт global-generations.us, синкает title / description / canonical / noindex / JSON-LD / word count в docs/seo_mapping.md. Запускать после любого деплоя который трогал meta-теги.
+description: Кравлит реальный сайт global-generations.us, синкает title / description / canonical / noindex / JSON-LD / word count в seo/mapping.md. Запускать после любого деплоя который трогал meta-теги.
 argument-hint: [optional URL path, default = все страницы из mapping]
 ---
 
 # /seo-crawl — Sync live page data into seo_mapping.md
 
-**Target file:** `docs/seo_mapping.md`
-**Aux output:** `docs/seo-crawl-YYYY-MM-DD.md` (dated отчёт по результатам)
+**Target file:** `seo/mapping.md`
+**Aux output:** `seo/reports/seo-crawl-YYYY-MM-DD.md` (dated отчёт по результатам)
 **Argument:** `$ARGUMENTS` — optional URL path (`/`, `/usa`, etc.). Пусто = все страницы из mapping.
 **Requires:** WebFetch (built-in).
-**Reference:** `references/audit-checklist.md` — что проверять и какой severity.
+**Reference:** `seo/references/audit-checklist.md` — что проверять и какой severity.
 
 ---
 
 ## Step 1: Прочитать mapping
 
-Открыть `docs/seo_mapping.md`, собрать список страниц секции `## Pages` (каждый `### /path` или `### URL: ...` блок).
+Открыть `seo/mapping.md`, собрать список страниц секции `## Pages` (каждый `### /path` или `### URL: ...` блок).
 
 Если `$ARGUMENTS` задан — кравлим только этот path. Иначе — все.
 
@@ -74,11 +74,11 @@ HTTP_STATUS: N
 - H1 differs
 - HTTP status != 200
 
-Применить severity по `references/audit-checklist.md`.
+Применить severity по `seo/references/audit-checklist.md`.
 
 ## Step 4: Обновить mapping
 
-Для каждой расхождения — обновить нужную строку в `docs/seo_mapping.md`. Пересчитать char counts (Title ≤ 70, Desc 120–160). Обновить `**Last audited:**` на сегодня.
+Для каждой расхождения — обновить нужную строку в `seo/mapping.md`. Пересчитать char counts (Title ≤ 70, Desc 120–160). Обновить `**Last audited:**` на сегодня.
 
 `**Content quality:**` всегда переписать актуальными данными:
 
@@ -90,7 +90,7 @@ HTTP_STATUS: N
 
 ## Step 5: Output
 
-Создать `docs/seo-crawl-YYYY-MM-DD.md` со структурой:
+Создать `seo/reports/seo-crawl-YYYY-MM-DD.md` со структурой:
 
 ```
 # SEO Crawl — {YYYY-MM-DD}
@@ -125,7 +125,7 @@ Failed: N
 - Lev: посмотри title — он сейчас "РЕМАРКЕТИНГ" (test).
 ```
 
-Поверх обновить раздел `## Pages` в `docs/seo_mapping.md` и поле `**Crawl:** {YYYY-MM-DD}` в `## SEO Health`.
+Поверх обновить раздел `## Pages` в `seo/mapping.md` и поле `**Crawl:** {YYYY-MM-DD}` в `## SEO Health`.
 
 ## Step 6: Sitemap sanity
 

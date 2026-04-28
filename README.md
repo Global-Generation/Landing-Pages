@@ -22,8 +22,7 @@ js/                 — Tilda scripts
 images/             — All images (~370 files)
 files/              — Page body fragments
 .claude/commands/   — Slash commands for SEO toolkit (/seo-*)
-docs/               — SEO state files (seo_mapping.md, trends, dated reports)
-references/         — Templates and MCP setup docs
+seo/                — SEO documentation, state files, templates, reports — start here for SEO
 ```
 
 ## Deploy
@@ -60,42 +59,41 @@ DYLD_LIBRARY_PATH=/opt/homebrew/opt/expat/lib \
 
 The `LevAvdoshin-Truv` GitHub account has no push rights to this repo. Use `gh auth switch --user LevAvdoshin` before pushing.
 
-## SEO Toolkit
+## SEO
 
-Этот репо содержит полноценный набор SEO-команд под global-generations.us. Source-of-truth — `docs/seo_mapping.md`.
+Полноценный SEO-toolkit живёт в **[`seo/`](seo/README.md)** — это единая точка входа.
 
-### Команды (slash в Claude Code)
+10 slash-команд (`.claude/commands/seo-*.md`):
 
-| Команда | Что делает | Cadence |
-|---|---|---|
-| `/seo-crawl` | Кравлит реальный сайт, синкает meta/JSON-LD/word count в mapping | После каждого деплоя |
-| `/seo-gsc` | Тянет данные Google Search Console | Еженедельно |
-| `/seo-semrush` | Тянет SEMrush — keywords, traffic, position, тренд | Ежемесячно |
-| `/seo-keywords` | Подбор кандидатов primary/secondary keywords | По требованию |
-| `/seo-diagnose` | Root cause: почему страница не ранжируется | После семруш+гск |
-| `/seo-gaps` | Конкуренты + keyword gap | Раз в квартал |
-| `/seo-audit` | Приоритизация фиксов (Impact × Effort) | Ежемесячно |
-| `/seo-daily` | Ежедневная рутина (5 мин) — индексация, top queries/pages | Каждый рабочий день |
-| `/seo-weekly` | Пятничный digest для команды | Пятница |
-| `/seo-report` | Месячный отчёт + brief mode | Первый рабочий день месяца |
+| Команда | Когда |
+|---|---|
+| `/seo-crawl` | После каждого деплоя |
+| `/seo-daily` | Каждый рабочий день |
+| `/seo-gsc` | Еженедельно |
+| `/seo-semrush` | Ежемесячно |
+| `/seo-keywords` | По требованию |
+| `/seo-diagnose` | После gsc+semrush |
+| `/seo-gaps` | Раз в квартал |
+| `/seo-audit` | Ежемесячно |
+| `/seo-weekly` | Пятница |
+| `/seo-report` | 1-е число месяца |
 
-### Run order (новый сайт)
+Run order для нового сайта: `crawl → gsc → semrush → keywords → diagnose → audit`.
 
-```
-/seo-crawl  →  /seo-gsc  →  /seo-semrush  →  /seo-keywords  →  /seo-diagnose  →  /seo-audit
-```
-
-### Файлы
-
-- `docs/seo_mapping.md` — главный источник правды (страницы, keywords, GSC/SEMrush данные, диагнозы, issues, SEO health)
-- `docs/seo-trends.md` — история метрик по месяцам
-- `docs/seo-{crawl|gsc|semrush|keywords|diagnose|gaps|audit|weekly|report}-YYYY-MM-DD.md` — dated отчёты
-- `docs/seo-daily-log.md` — append-log от `/seo-daily`
-- `references/audit-checklist.md` — что проверять при кравле, severity scale
-- `references/report-template.md` — шаблон месячного отчёта
-- `references/weekly-template.md` — шаблон пятничного digest
-- `references/MCP-SETUP.md` — инструкция как поднять `gg-search-console` и `gg-semrush` MCP-серверы
-
-### Перед первым запуском
-
-Прочитать `references/MCP-SETUP.md` и поднять MCP-серверы. До этого работает только `/seo-crawl` (через WebFetch без внешних API) и read-only команды (`/seo-audit`, `/seo-weekly`, `/seo-report`) на уже накопленных данных.
+Документация в `seo/`:
+- `seo/README.md` — обзор + быстрые команды + сравнение с SAT
+- `seo/STATUS.md` — текущее состояние, blockers
+- `seo/mapping.md` — главный source-of-truth
+- `seo/PLAN.md` — 6-месячный план
+- `seo/KEYWORDS.md` — keyword strategy
+- `seo/AUDIT.md` — техническое состояние
+- `seo/SYSTEM.md` — архитектура pipeline
+- `seo/COMPETITORS.md` — конкуренты
+- `seo/CONTENT-PLAN.md` — что планируем менять/добавлять
+- `seo/EDITORIAL-GUIDE.md` — стайл-гайд для копи
+- `seo/DECISIONS.md` — лог ключевых решений
+- `seo/GLOSSARY.md` — термины
+- `seo/DAILY-LOG.md` — daily routine append-log
+- `seo/trends.md` — история метрик
+- `seo/reports/` — dated отчёты от каждой команды
+- `seo/references/` — шаблоны + MCP setup инструкция

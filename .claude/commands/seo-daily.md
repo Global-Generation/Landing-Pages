@@ -1,11 +1,11 @@
 ---
-description: Ежедневная SEO-рутина — индексация, top-5 queries, top-5 pages, sitemap coverage, рекомендации на день. Append в docs/seo-daily-log.md. 5-минутная команда.
+description: Ежедневная SEO-рутина — индексация, top-5 queries, top-5 pages, sitemap coverage, рекомендации на день. Append в seo/DAILY-LOG.md. 5-минутная команда.
 argument-hint: [нет]
 ---
 
 # /seo-daily — Daily SEO routine
 
-**Target file:** `docs/seo-daily-log.md` (append)
+**Target file:** `seo/DAILY-LOG.md` (append)
 **Requires:** MCP `gg-search-console`. SEMrush опционален.
 
 ---
@@ -45,7 +45,7 @@ Totals + top-5 queries + top-5 pages (отдельные вызовы с `dimens
 
 ## Step 4: Сравнить с прошлым днём
 
-Прочитать `docs/seo-daily-log.md` — вытащить вчерашние числа. Посчитать Δ:
+Прочитать `seo/DAILY-LOG.md` — вытащить вчерашние числа. Посчитать Δ:
 - Impressions Δ
 - Clicks Δ
 - Avg pos Δ

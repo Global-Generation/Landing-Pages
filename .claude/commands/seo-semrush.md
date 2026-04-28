@@ -1,12 +1,12 @@
 ---
-description: Тянет данные SEMrush для global-generations.us — domain rank, organic keywords, traffic, 12-мес тренд, per-page primary keyword position. Пишет в docs/seo_mapping.md и docs/seo-trends.md.
+description: Тянет данные SEMrush для global-generations.us — domain rank, organic keywords, traffic, 12-мес тренд, per-page primary keyword position. Пишет в seo/mapping.md и seo/trends.md.
 argument-hint: [optional URL path для одной страницы]
 ---
 
 # /seo-semrush — Pull SEMrush data into mapping
 
-**Target file:** `docs/seo_mapping.md`
-**Aux outputs:** `docs/seo-trends.md`, `docs/seo-semrush-YYYY-MM-DD.md`
+**Target file:** `seo/mapping.md`
+**Aux outputs:** `seo/trends.md`, `seo/reports/seo-semrush-YYYY-MM-DD.md`
 **Argument:** `$ARGUMENTS` — optional URL path (default = все страницы).
 **Requires:** MCP `gg-semrush`.
 
@@ -65,7 +65,7 @@ mcp__gg-semrush__domain_organic(domain="global-generations.us", database="ru", d
 
 ## Step 6: Trends
 
-В `docs/seo-trends.md`:
+В `seo/trends.md`:
 
 ```
 | {YYYY-MM} | {traffic} | {keywords} | {rank} | SEMrush |
@@ -79,7 +79,7 @@ mcp__gg-semrush__domain_organic(domain="global-generations.us", database="ru", d
 
 ## Step 7: Dated report
 
-`docs/seo-semrush-YYYY-MM-DD.md`:
+`seo/reports/seo-semrush-YYYY-MM-DD.md`:
 
 ```
 # SEMrush Sync — {YYYY-MM-DD}

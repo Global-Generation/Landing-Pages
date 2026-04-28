@@ -5,8 +5,8 @@ argument-hint: [optional "critical" = только Do First, "all" = включ�
 
 # /seo-audit — Prioritized SEO action list
 
-**Target file:** `docs/seo_mapping.md`
-**Aux output:** `docs/seo-audit-YYYY-MM-DD.md`
+**Target file:** `seo/mapping.md`
+**Aux output:** `seo/reports/seo-audit-YYYY-MM-DD.md`
 **Argument:** `$ARGUMENTS` — пусто = все, `critical` = только 🔥, `all` = включая 🟢 defer.
 **Requires:** ничего внешнего — только existing mapping.
 
@@ -14,7 +14,7 @@ argument-hint: [optional "critical" = только Do First, "all" = включ�
 
 ## Step 1: Read mapping
 
-Открыть `docs/seo_mapping.md`. Для каждой страницы извлечь:
+Открыть `seo/mapping.md`. Для каждой страницы извлечь:
 - URL, priority (🔴🟡🟢), status, noindex
 - Primary keyword + vol/KD + status
 - Title/Description char count + ✓/⚠️
@@ -68,7 +68,7 @@ argument-hint: [optional "critical" = только Do First, "all" = включ�
 
 ## Step 5: Dated report
 
-`docs/seo-audit-YYYY-MM-DD.md`:
+`seo/reports/seo-audit-YYYY-MM-DD.md`:
 
 ```
 # SEO Audit — {YYYY-MM-DD}

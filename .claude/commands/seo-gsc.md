@@ -1,14 +1,14 @@
 ---
-description: Тянет данные Google Search Console для global-generations.us — domain snapshot, per-page impressions/clicks/CTR/position, top queries, branded vs non-branded. Пишет в docs/seo_mapping.md и docs/seo-trends.md.
+description: Тянет данные Google Search Console для global-generations.us — domain snapshot, per-page impressions/clicks/CTR/position, top queries, branded vs non-branded. Пишет в seo/mapping.md и seo/trends.md.
 argument-hint: [optional URL path = single page, optional days N = окно (default 28)]
 ---
 
 # /seo-gsc — Pull GSC data into mapping
 
-**Target file:** `docs/seo_mapping.md`
-**Aux outputs:** `docs/seo-trends.md` (upsert строки за месяц), `docs/seo-gsc-YYYY-MM-DD.md` (dated отчёт)
+**Target file:** `seo/mapping.md`
+**Aux outputs:** `seo/trends.md` (upsert строки за месяц), `seo/reports/seo-gsc-YYYY-MM-DD.md` (dated отчёт)
 **Argument:** `$ARGUMENTS` — `[/path]` для одной страницы, `[N days]` для окна (default 28).
-**Requires:** MCP `gg-search-console` (см. `references/MCP-SETUP.md` для настройки).
+**Requires:** MCP `gg-search-console` (см. `seo/references/MCP-SETUP.md` для настройки).
 
 Site URL в GSC: `https://global-generations.us/`.
 
@@ -20,7 +20,7 @@ Site URL в GSC: `https://global-generations.us/`.
 mcp__gg-search-console__site_snapshot(site="https://global-generations.us/")
 ```
 
-Если ошибка — стоп, попросить Lev проверить OAuth (см. `references/MCP-SETUP.md`).
+Если ошибка — стоп, попросить Lev проверить OAuth (см. `seo/references/MCP-SETUP.md`).
 
 ## Step 2: Domain snapshot
 
@@ -88,7 +88,7 @@ mcp__gg-search-console__advanced_search_analytics(
 
 ## Step 6: Trends
 
-В `docs/seo-trends.md` апсерт строки за текущий месяц (анкер = последний день месяца):
+В `seo/trends.md` апсерт строки за текущий месяц (анкер = последний день месяца):
 
 ```
 | {YYYY-MM} | {impressions} | {clicks} | {ctr}% | {avg_pos} | {branded%} | GSC |
@@ -96,7 +96,7 @@ mcp__gg-search-console__advanced_search_analytics(
 
 ## Step 7: Dated report
 
-Создать `docs/seo-gsc-YYYY-MM-DD.md`:
+Создать `seo/reports/seo-gsc-YYYY-MM-DD.md`:
 
 ```
 # GSC Sync — {YYYY-MM-DD}

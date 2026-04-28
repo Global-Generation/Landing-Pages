@@ -5,8 +5,8 @@ argument-hint: [optional "--gaps-only" чтобы пропустить competito
 
 # /seo-gaps — Competitive landscape + keyword gaps
 
-**Target file:** `docs/seo_mapping.md` (sections: `### Competitive Landscape`, `### Keyword Opportunities`)
-**Aux output:** `docs/seo-gaps-YYYY-MM-DD.md`
+**Target file:** `seo/mapping.md` (sections: `### Competitive Landscape`, `### Keyword Opportunities`)
+**Aux output:** `seo/reports/seo-gaps-YYYY-MM-DD.md`
 **Argument:** `$ARGUMENTS` — `--gaps-only` пропускает competitor overview, сразу к gap-кейвордам.
 **Requires:** MCP `gg-semrush`.
 
@@ -97,7 +97,7 @@ Top-N (N = 30) высоких opportunity — добавить как `**Seconda
 
 ## Step 6: Dated report
 
-`docs/seo-gaps-YYYY-MM-DD.md`:
+`seo/reports/seo-gaps-YYYY-MM-DD.md`:
 
 ```
 # Competitive & Gap Analysis — {YYYY-MM-DD}

@@ -5,8 +5,8 @@ argument-hint: [optional URL path = одна страница, default = все 
 
 # /seo-diagnose — Why not ranking?
 
-**Target file:** `docs/seo_mapping.md`
-**Aux output:** `docs/seo-diagnose-YYYY-MM-DD.md`
+**Target file:** `seo/mapping.md`
+**Aux output:** `seo/reports/seo-diagnose-YYYY-MM-DD.md`
 **Argument:** `$ARGUMENTS` — `/path` = одна страница; иначе все 🔴.
 **Requires:** MCP `gg-semrush` + WebFetch. Опционально `gg-search-console`.
 
@@ -91,7 +91,7 @@ Skip если URL = .gov, .edu, hr-портал (не наш игровой пр
 
 ## Step 8: Dated report
 
-`docs/seo-diagnose-YYYY-MM-DD.md`:
+`seo/reports/seo-diagnose-YYYY-MM-DD.md`:
 
 ```
 # SEO Diagnosis — {YYYY-MM-DD}

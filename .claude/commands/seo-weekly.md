@@ -5,9 +5,9 @@ argument-hint: [нет]
 
 # /seo-weekly — Weekly digest (Friday)
 
-**Inputs:** `docs/seo_mapping.md`, `docs/seo-trends.md`, последние `docs/seo-{gsc|semrush|crawl|audit|diagnose}-*.md` за прошедшую неделю.
-**Output:** `docs/seo-weekly-YYYY-MM-DD.md` + текст для копи-пейста.
-**Template:** `references/weekly-template.md`.
+**Inputs:** `seo/mapping.md`, `seo/trends.md`, последние `seo/reports/seo-{gsc|semrush|crawl|audit|diagnose}-*.md` за прошедшую неделю.
+**Output:** `seo/reports/seo-weekly-YYYY-MM-DD.md` + текст для копи-пейста.
+**Template:** `seo/references/weekly-template.md`.
 **Requires:** ничего внешнего.
 
 ---
@@ -23,13 +23,13 @@ Warnings отдельным блоком `## Data freshness` в начале dig
 
 ## Step 2: Прочитать current state
 
-Из `docs/seo_mapping.md`:
+Из `seo/mapping.md`:
 - Domain Metrics секция
 - Top Priorities (top 5)
 - Open Issues (top 5)
 - Per-page GSC line для всех страниц (сейчас одна `/`)
 
-Из `docs/seo-trends.md`:
+Из `seo/trends.md`:
 - Последние 2 строки domain trends
 - Последние 2 строки GSC trends
 - Последние 2 строки page position
@@ -54,7 +54,7 @@ Diff неделя-к-неделе:
 
 ## Step 5: Write digest
 
-Использовать `references/weekly-template.md`:
+Использовать `seo/references/weekly-template.md`:
 
 ```
 # SEO Weekly — global-generations.us — {YYYY-MM-DD}
@@ -84,7 +84,7 @@ Diff неделя-к-неделе:
 
 ## Step 6: Save + print
 
-Сохранить в `docs/seo-weekly-YYYY-MM-DD.md`. Вывести содержимое в чат целиком — Lev копирует в Slack/Notion.
+Сохранить в `seo/reports/seo-weekly-YYYY-MM-DD.md`. Вывести содержимое в чат целиком — Lev копирует в Slack/Notion.
 
 `**Last weekly:** {YYYY-MM-DD}` в `## SEO Health` (если поле уже есть, иначе добавить).
 

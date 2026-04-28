@@ -16,11 +16,10 @@ DYLD_LIBRARY_PATH=/opt/homebrew/opt/expat/lib aws cloudfront create-invalidation
 
 - `page62702763.html` — the only real page (main landing at `/`)
 - `404.html` — error page
-- `robots.txt` / `sitemap.xml` — SEO (sitemap currently has 6 dead URLs — see `docs/seo_mapping.md → Top Priorities`)
+- `robots.txt` / `sitemap.xml` — SEO (sitemap currently has 6 dead URLs — see `seo/STATUS.md`)
 - `css/`, `js/`, `images/` — shared Tilda assets (do not delete randomly — main page references them)
 - `.claude/commands/seo-*.md` — slash commands for the SEO toolkit
-- `docs/seo_mapping.md` — central SEO source-of-truth (read first when working on SEO)
-- `references/MCP-SETUP.md` — how to wire the `gg-search-console` / `gg-semrush` MCPs
+- `seo/` — все SEO docs / state / reports / templates / MCP setup. **Точка входа: `seo/README.md`**
 
 ## Infrastructure
 
@@ -37,30 +36,31 @@ DYLD_LIBRARY_PATH=/opt/homebrew/opt/expat/lib aws cloudfront create-invalidation
 - **TODO**: cancel SiteGround hosting subscription after DNS fully propagates (24-48h from 2026-04-27)
 - **60-day registrar lock** active until ~2026-06-26 (`clientTransferProhibited`/`serverTransferProhibited`) — standard post-transfer security
 
-## SEO commands (TL;DR)
+## SEO toolkit
 
-10 slash-команд в `.claude/commands/`:
-- `/seo-crawl` — sync live page meta into mapping (после деплоя)
-- `/seo-gsc` — pull GSC data (impressions, clicks, top queries) — еженедельно
-- `/seo-semrush` — pull SEMrush (traffic, keywords, position) — ежемесячно
-- `/seo-keywords` — research / apply primary keywords
-- `/seo-diagnose` — root cause анализ (почему не ранжируется)
-- `/seo-gaps` — конкуренты + keyword gap analysis (раз в квартал)
-- `/seo-audit` — приоритизация фиксов (Impact × Effort)
-- `/seo-daily` — daily routine (5 мин) — индексация + top queries
-- `/seo-weekly` — пятничный digest для команды
-- `/seo-report` — месячный отчёт + brief mode
+Вся документация и state — в `seo/`. Главная точка входа: **`seo/README.md`**.
 
-**Source-of-truth:** `docs/seo_mapping.md`. **Run order для нового сайта:** crawl → gsc → semrush → keywords → diagnose → audit.
+10 slash-команд в `.claude/commands/seo-*.md`:
+`/seo-crawl`, `/seo-gsc`, `/seo-semrush`, `/seo-keywords`, `/seo-diagnose`, `/seo-gaps`, `/seo-audit`, `/seo-daily`, `/seo-weekly`, `/seo-report`.
+
+**Source-of-truth:** `seo/mapping.md`. **Run order:** crawl → gsc → semrush → keywords → diagnose → audit.
 
 ### Текущий статус MCP (2026-04-27)
 
-- `gg-search-console` — ⏳ pending OAuth (нужен refresh token, см. `references/MCP-SETUP.md`)
+- `gg-search-console` — ⏳ pending OAuth (см. `seo/references/MCP-SETUP.md`)
 - `gg-semrush` — ⏳ **deferred** — Lev купит SEMrush API позже
 
-**Работает без MCP сразу:** `/seo-crawl`, `/seo-audit`, `/seo-weekly`, `/seo-report`.
-**Ждёт OAuth для GSC:** `/seo-gsc`, `/seo-daily`.
+**Работает сразу:** `/seo-crawl`, `/seo-audit`, `/seo-weekly`, `/seo-report`.
+**Ждёт OAuth:** `/seo-gsc`, `/seo-daily`.
 **Ждёт SEMrush:** `/seo-semrush`, `/seo-keywords`, `/seo-diagnose`, `/seo-gaps`.
+
+### При работе над SEO
+
+1. Прочитать `seo/STATUS.md` — что заблокировано, что в очереди.
+2. Если непонятна структура — `seo/SYSTEM.md`.
+3. Если нужны конкретные сценарии (cold start, weekly cycle) — `seo/references/run-cookbook.md`.
+4. Перед написанием копи — `seo/EDITORIAL-GUIDE.md`.
+5. Перед стратегическим решением — посмотреть `seo/DECISIONS.md` (вдруг уже решили).
 
 ## GOTCHA
 
