@@ -4,6 +4,24 @@
 
 Серверы живут **вне репо**, в `~/.claude/mcp-servers/`. В `~/.claude/mcp.json` нужно зарегистрировать их так чтобы Claude Code их подхватывал.
 
+## Текущий статус (2026-04-27)
+
+| Сервер | Статус | Блокер |
+|---|---|---|
+| `gg-search-console` | ⏳ Pending OAuth setup | Нужен refresh token (см. ниже) |
+| `gg-semrush` | ⏳ **Deferred** | Lev купит SEMrush API позже. Не настраивать до этого. |
+
+**Что работает прямо сейчас (без MCP):**
+- `/seo-crawl` — WebFetch, no API
+- `/seo-audit` — read-only по mapping
+- `/seo-weekly`, `/seo-report` — синтез из существующих файлов
+
+**Что заблокировано до OAuth:**
+- `/seo-gsc`, `/seo-daily`
+
+**Что заблокировано до покупки SEMrush:**
+- `/seo-semrush`, `/seo-keywords`, `/seo-diagnose`, `/seo-gaps`
+
 ---
 
 ## TL;DR
@@ -85,9 +103,11 @@ mcp__gg-search-console__site_snapshot()
 
 ## 2. gg-semrush
 
+> ⏳ **Deferred** — Lev купит SEMrush API позже. До тех пор этот раздел — справочный, не настраивать.
+
 ### Зависимости
 - Node.js + npm
-- SEMrush API key (оплачивается отдельно — у Lev уже есть для другого проекта, можно переиспользовать ключ)
+- SEMrush API key (оплачивается отдельно — Lev купит, см. SEMrush.com → Subscription → API access)
 
 ### env vars
 

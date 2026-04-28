@@ -45,10 +45,13 @@ _Заполняется командой `/seo-audit`. Изначально:_
 
 _Заполняется командой `/seo-audit`._
 
-- [ ] Sitemap содержит 6 несуществующих URL (404 на CloudFront)
-- [ ] Title временно заменён на `РЕМАРКЕТИНГ`
-- [ ] Primary keyword не валидирован (vol/KD/intent ещё не проверены)
-- [ ] Не настроены MCP `gg-search-console` и `gg-semrush` (см. `references/MCP-SETUP.md`)
+- [ ] 🔥 Sitemap содержит 6 несуществующих URL (404 на CloudFront): `/usa`, `/services`, `/premium`, `/faq`, `/reviews`, `/company`
+- [ ] 🔥 Title временно заменён на `РЕМАРКЕТИНГ` (test placeholder, ожидает финального текста от Lev)
+- [ ] 🔴 Primary keyword не валидирован (vol/KD/intent ещё не проверены — нужен SEMrush)
+- [ ] 🔴 Tilda рендерит heading-картинками — текстовый H1 в DOM отсутствует (impact: нет keyword signal)
+- [ ] 🟡 MCP `gg-search-console` не настроен — `/seo-gsc`, `/seo-daily` не работают пока не прогнан OAuth flow (см. `references/MCP-SETUP.md`)
+- [ ] 🟡 MCP `gg-semrush` deferred — Lev купит SEMrush API позже. До покупки `/seo-semrush`, `/seo-keywords`, `/seo-diagnose`, `/seo-gaps` не работают
+- [ ] 🟢 SiteGround hosting subscription активна — отменить после DNS пропагации (после 2026-04-29)
 
 ### Status Board
 
