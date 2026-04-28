@@ -61,39 +61,18 @@ The `LevAvdoshin-Truv` GitHub account has no push rights to this repo. Use `gh a
 
 ## SEO
 
-Полноценный SEO-toolkit живёт в **[`seo/`](seo/README.md)** — это единая точка входа.
+SEO-toolkit живёт в **[`seo/`](seo/README.md)** — это единая точка входа.
 
-10 slash-команд (`.claude/commands/seo-*.md`):
+5 slash-команд (`.claude/commands/seo-*.md`):
 
-| Команда | Когда |
-|---|---|
-| `/seo-crawl` | После каждого деплоя |
-| `/seo-daily` | Каждый рабочий день |
-| `/seo-gsc` | Еженедельно |
-| `/seo-semrush` | Ежемесячно |
-| `/seo-keywords` | По требованию |
-| `/seo-diagnose` | После gsc+semrush |
-| `/seo-gaps` | Раз в квартал |
-| `/seo-audit` | Ежемесячно |
-| `/seo-weekly` | Пятница |
-| `/seo-report` | 1-е число месяца |
+| Команда | Когда | MCP |
+|---|---|---|
+| `/seo-crawl` | После каждого деплоя | none ✅ |
+| `/seo-audit` | Ежемесячно | none ✅ |
+| `/seo-report` | 1-е число месяца | none ✅ |
+| `/seo-gsc` | Еженедельно | gg-search-console (⏳ OAuth pending) |
+| `/seo-semrush` | Ежемесячно | gg-semrush (⏳ Lev купит API) |
 
-Run order для нового сайта: `crawl → gsc → semrush → keywords → diagnose → audit`.
+Run order: `crawl → gsc → semrush → audit → report`.
 
-Документация в `seo/`:
-- `seo/README.md` — обзор + быстрые команды + сравнение с SAT
-- `seo/STATUS.md` — текущее состояние, blockers
-- `seo/mapping.md` — главный source-of-truth
-- `seo/PLAN.md` — 6-месячный план
-- `seo/KEYWORDS.md` — keyword strategy
-- `seo/AUDIT.md` — техническое состояние
-- `seo/SYSTEM.md` — архитектура pipeline
-- `seo/COMPETITORS.md` — конкуренты
-- `seo/CONTENT-PLAN.md` — что планируем менять/добавлять
-- `seo/EDITORIAL-GUIDE.md` — стайл-гайд для копи
-- `seo/DECISIONS.md` — лог ключевых решений
-- `seo/GLOSSARY.md` — термины
-- `seo/DAILY-LOG.md` — daily routine append-log
-- `seo/trends.md` — история метрик
-- `seo/reports/` — dated отчёты от каждой команды
-- `seo/references/` — шаблоны + MCP setup инструкция
+Документация в `seo/`: `README.md`, `STATUS.md`, `mapping.md`, `AUDIT.md`, `DECISIONS.md`, `trends.md` + `references/` (MCP-SETUP, audit-checklist, report-template, run-cookbook) + `reports/` для dated outputs.

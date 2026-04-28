@@ -38,29 +38,24 @@ DYLD_LIBRARY_PATH=/opt/homebrew/opt/expat/lib aws cloudfront create-invalidation
 
 ## SEO toolkit
 
-Вся документация и state — в `seo/`. Главная точка входа: **`seo/README.md`**.
+Документация и state — в `seo/`. Точка входа: **`seo/README.md`**.
 
-10 slash-команд в `.claude/commands/seo-*.md`:
-`/seo-crawl`, `/seo-gsc`, `/seo-semrush`, `/seo-keywords`, `/seo-diagnose`, `/seo-gaps`, `/seo-audit`, `/seo-daily`, `/seo-weekly`, `/seo-report`.
+5 slash-команд: `/seo-crawl`, `/seo-gsc`, `/seo-semrush`, `/seo-audit`, `/seo-report`.
 
-**Source-of-truth:** `seo/mapping.md`. **Run order:** crawl → gsc → semrush → keywords → diagnose → audit.
+**Source-of-truth:** `seo/mapping.md`. **Run order:** `crawl → gsc → semrush → audit → report`.
 
-### Текущий статус MCP (2026-04-27)
+### Status (2026-04-27)
 
-- `gg-search-console` — ⏳ pending OAuth (см. `seo/references/MCP-SETUP.md`)
-- `gg-semrush` — ⏳ **deferred** — Lev купит SEMrush API позже
-
-**Работает сразу:** `/seo-crawl`, `/seo-audit`, `/seo-weekly`, `/seo-report`.
-**Ждёт OAuth:** `/seo-gsc`, `/seo-daily`.
-**Ждёт SEMrush:** `/seo-semrush`, `/seo-keywords`, `/seo-diagnose`, `/seo-gaps`.
+- ✅ работает без MCP: `/seo-crawl`, `/seo-audit`, `/seo-report`
+- ⏳ `/seo-gsc` — нужен OAuth (см. `seo/references/MCP-SETUP.md`)
+- ⏳ `/seo-semrush` — Lev купит API позже
 
 ### При работе над SEO
 
-1. Прочитать `seo/STATUS.md` — что заблокировано, что в очереди.
-2. Если непонятна структура — `seo/SYSTEM.md`.
-3. Если нужны конкретные сценарии (cold start, weekly cycle) — `seo/references/run-cookbook.md`.
-4. Перед написанием копи — `seo/EDITORIAL-GUIDE.md`.
-5. Перед стратегическим решением — посмотреть `seo/DECISIONS.md` (вдруг уже решили).
+1. `seo/STATUS.md` — что работает, что заблокировано.
+2. `seo/mapping.md` — конкретно что чинить (Top Priorities + Open Issues + H1 fix path).
+3. `seo/references/run-cookbook.md` — типовые сценарии.
+4. `seo/DECISIONS.md` — посмотреть прежде чем переоткрывать решённый вопрос.
 
 ## GOTCHA
 

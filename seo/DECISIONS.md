@@ -53,11 +53,11 @@
 
 ## 2026-04-27 — SEMrush deferred, не блокируем toolkit
 
-**Что решили:** SEMrush API key Lev купит позже. Пока пишем команды без зависимости — `/seo-crawl`, `/seo-audit`, `/seo-weekly`, `/seo-report` работают без MCP.
+**Что решили:** SEMrush API key Lev купит позже. Пока команды без зависимости — `/seo-crawl`, `/seo-audit`, `/seo-report` работают без MCP.
 **Почему:** Не блокировать запуск SEO-инфры на финансовое решение.
 **Последствия:**
-- 4 команды (`/seo-semrush`, `/seo-keywords`, `/seo-diagnose`, `/seo-gaps`) ⏳ не работают до покупки.
-- Pre-emptive написали с правильными MCP-вызовами — после покупки сразу работают, переписывать не надо.
+- `/seo-semrush` ⏳ не работает до покупки.
+- Pre-emptive написана с правильными MCP-вызовами — после покупки сразу работает, переписывать не надо.
 **Кто принял:** Lev.
 **Когда пересматривать:** После покупки SEMrush.
 
@@ -65,16 +65,54 @@
 
 ## 2026-04-27 — Все SEO-файлы в `seo/`, а не `docs/` + `references/`
 
-**Что решили:** Консолидировать `docs/seo*` и `references/*` в одну папку `seo/`. Зеркало структуры SAT.
-**Почему:**
-- Single entry point для будущих сессий и для других людей.
-- Mirror SAT pattern — Lev уже привык.
-- Легче grep по проекту: `seo/` ↔ `seo/references/` ↔ `seo/reports/`.
-**Последствия:**
-- Все 10 slash-команд обновлены — пути `docs/seo*` → `seo/*`.
-- Старые `docs/`, `references/` директории удалены.
+**Что решили:** Консолидировать `docs/seo*` и `references/*` в одну папку `seo/`.
+**Почему:** Single entry point. Легче grep по проекту.
+**Последствия:** Все slash-команд обновлены — пути `docs/seo*` → `seo/*`. Старые `docs/`, `references/` удалены.
 **Кто принял:** Lev (просьба) + agent (исполнение).
-**Когда пересматривать:** Если появится non-SEO documentation — создать `docs/` отдельно для них.
+**Когда пересматривать:** Если появится non-SEO documentation — создать `docs/` отдельно.
+
+---
+
+## 2026-04-27 — Подрезали toolkit до реального scope
+
+**Что решили:** Удалили 5 slash-команд (`/seo-daily`, `/seo-weekly`, `/seo-keywords`, `/seo-diagnose`, `/seo-gaps`) и 8 documentation файлов (`PLAN.md`, `SYSTEM.md`, `KEYWORDS.md`, `COMPETITORS.md`, `CONTENT-PLAN.md`, `EDITORIAL-GUIDE.md`, `GLOSSARY.md`, `DAILY-LOG.md`). Осталось 5 команд и 5 main docs.
+
+**Почему:**
+- Сайт — single-page Tilda landing. SAT-уровень toolkit (10 команд + 13 docs) не соответствует.
+- Половина документации была плейсхолдерами или придуманными правилами (EDITORIAL-GUIDE с brand voice который никто не подтверждал; COMPETITORS с угаданным DR; PLAN с aspirational roadmap без commitment).
+- Daily routine для одностраничника overkill — нет ежедневных публикаций которые нужно мониторить.
+- `/seo-keywords`, `/seo-diagnose`, `/seo-gaps` — все требуют SEMrush; ручной анализ через SEMrush UI проще пока команд мало.
+
+**Альтернативы:**
+- Оставить «на вырост» — risk: половина файлов deteriorates, документация стареет.
+- Переписать каждый файл аккуратно — overhead больше чем ценность для текущего scope.
+
+**Последствия:**
+- 5 команд: `/seo-crawl`, `/seo-gsc`, `/seo-semrush`, `/seo-audit`, `/seo-report`.
+- 5 main docs: README, STATUS, mapping, AUDIT, DECISIONS + trends.md + 4 reference файла.
+- Удалённые файлы остались в git history — `git show e791baa:seo/PLAN.md` достанет если понадобится.
+
+**Кто принял:** Lev (запрос «оцени что плохо») + agent (выполнение).
+**Когда пересматривать:** Если появится блог / multi-page / контент-команда — вернуть `/seo-keywords`, `EDITORIAL-GUIDE`, etc. из истории.
+
+---
+
+## 2026-04-27 — H1 fix через visually-hidden injection, не Tilda re-render
+
+**Что решили:** Текстовый H1 добавлять через sed-инъекцию после Tilda-экспорта (паттерн `visually-hidden` от GitHub/MDN). Tilda не трогаем.
+**Почему:**
+- Tilda re-render требует менять Zero block и пересобирать весь экспорт — высокая трудоёмкость, риск сломать дизайн.
+- Visually-hidden — стандартный паттерн, Google и screen-readers его обрабатывают как обычный H1.
+- sed-инъекция воспроизводима после каждого re-export.
+**Альтернативы:**
+- Принять отсутствие H1 — теряем keyword signal в DOM.
+- Tilda Zero block с текстовым H1 — правильно, но дорого. Для phase 2 если запустим content hub.
+**Последствия:**
+- В `mapping.md → H1 fix` зафиксирован конкретный sed.
+- После каждого Tilda re-export → запускать sed перед коммитом (manual checklist пункт).
+- Если правок post-export станет больше — завести `seo/scripts/post-export.sh`.
+**Кто принял:** agent (предложил, Lev одобрил рамкой «сделай лучше»).
+**Когда пересматривать:** Если решим pivot с Tilda на собственный layer (Astro / Next.js).
 
 ---
 
@@ -106,21 +144,12 @@
 ## Future placeholder — решения которые **скоро придётся принимать**
 
 ### Q: Single-page или content hub?
-- **Когда**: после 2 месяцев данных GSC + первого `/seo-gaps`.
-- **Что нужно для решения**: количество gap keywords качества high; CTR на текущем landing; cost-benefit запуска блога.
-- **Записать в DECISIONS.md** при принятии.
-
-### Q: Перевести heading-картинки в текст или нет?
-- **Когда**: после первого `/seo-crawl` (увидим точный word count и H1 status).
-- **Что нужно**: оценка cost (Tilda re-render vs HTML overlay).
+- **Когда:** после 2-3 месяцев данных GSC.
+- **Что нужно для решения:** объём long-tail запросов в GSC, conversion rate на лендинге, ресурсы на контент.
 
 ### Q: Покупать ли Yandex Webmaster API доступ?
-- **Когда**: когда появится Yandex traffic > 100 кликов/мес.
-- **Альтернатива**: ручная проверка панели Yandex.Webmaster раз в неделю.
-
-### Q: Запускать ли Google Indexing API?
-- **Когда**: если выберем content hub и количество страниц > 20.
-- **Что нужно**: GSC OAuth scope `indexing` (доп. к `webmasters`).
+- **Когда:** если Yandex traffic > 100 кликов/мес.
+- **Альтернатива:** проверка Yandex.Webmaster панели руками раз в неделю.
 
 ---
 
