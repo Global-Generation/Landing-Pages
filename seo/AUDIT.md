@@ -16,27 +16,29 @@
 | Domain | `global-generations.us` (Route 53 Domains, expires 2027-05-15) |
 | DNS | Route 53 zone `Z054617150JR83K8E03X`, 4 awsdns NS |
 
-## On-page (`/`, на 2026-04-27)
+## On-page (`/`, проверено `/seo-crawl` 2026-04-27)
 
 | Элемент | Значение |
 |---|---|
 | `<html lang>` | `ru` |
-| `<title>` | `РЕМАРКЕТИНГ` 🔥 (тестовый) |
+| `<title>` | `РЕМАРКЕТИНГ` 🔥 (тестовый, ждёт замены) |
 | `<meta description>` | присутствует, 154 chars |
 | `<meta robots>` | _не задан_ → `index, follow` (default) |
 | `<link rel="canonical">` | `https://global-generations.us` |
 | `<link rel="alternate" hreflang>` | _не задан_ (single locale OK) |
 | `og:*` | присутствуют (title=РЕМАРКЕТИНГ — тоже тестовый) |
 | `twitter:*` | присутствуют |
-| Текстовый H1 | **отсутствует** (Tilda рендерит картинкой) |
-| JSON-LD | EducationalOrganization, Course, FAQPage (валидировать через `/seo-crawl`) |
+| `<h1>` | **«вы поступите в вуз мечты»** — есть в DOM ⚠️ но без primary keyword («США» / «поступление в вуз США» отсутствуют) |
+| H1 / H2 / H3 counts | 1 / 17 / 11 (здоровая иерархия) |
+| Word count (visible body) | ~9 600 |
+| JSON-LD | EducationalOrganization, Course, FAQPage — 3 валидных блока (не валидированы в schema.org validator, в backlog) |
 
 ## Verification & analytics
 
 | Сервис | ID / token | Где |
 |---|---|---|
 | Google Search Console | `emB0zgRKtastF9dTZvO_Oh3Nny9XizERshJLx7mIPEk` | `<meta name="google-site-verification">` в HTML |
-| Yandex Webmaster | `mailru-domain: Ny0LUK0o7rTUxyPh` | `<meta name="yandex-verification">` в HTML (нестандартный mailru-формат — проверить что Yandex принял) |
+| Yandex Webmaster | `mailru-domain: Ny0LUK0o7rTUxyPh` | `<meta name="yandex-verification">` (содержимое в нестандартном `mailru-domain:` формате — Yandex обычно ждёт просто токен, проверить в Yandex.Webmaster что property подтверждена; если нет — добавить отдельный normal-формат meta) |
 | Google Analytics 4 | `G-PWTD9C4LZ1` | через GTM |
 | Google Tag Manager | `GTM-PP5B2S79` | inline в HTML |
 
@@ -86,7 +88,8 @@ Host: https://global-generations.us
 |---|---|---|
 | 🔥 | Title = `РЕМАРКЕТИНГ` | Google индексирует тестовый текст в snippet |
 | 🔥 | Sitemap 404s | GSC флагает coverage errors, Google теряет crawl budget |
-| 🔴 | Нет текстового H1 | Нет heading-keyword signal в DOM (см. `mapping.md → H1 fix`) |
+| 🟡 | H1 без primary keyword | Heading «вы поступите в вуз мечты» — нет «США», теряем keyword-signal под целевую фразу (см. `mapping.md → H1 keyword fix`) |
+| 🟡 | Yandex verification в нестандартном формате | Возможно property не подтверждена в Yandex.Webmaster |
 | 🟡 | Page weight 4.7 MB | LCP под угрозой — нужен Lighthouse-замер |
 | 🟢 | `Host:` в robots устарела | Косметика |
 

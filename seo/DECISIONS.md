@@ -97,22 +97,18 @@
 
 ---
 
-## 2026-04-27 — H1 fix через visually-hidden injection, не Tilda re-render
+## 2026-04-27 — H1 fix отменён: H1 уже существует в DOM
 
-**Что решили:** Текстовый H1 добавлять через sed-инъекцию после Tilda-экспорта (паттерн `visually-hidden` от GitHub/MDN). Tilda не трогаем.
+**Что решили:** Visually-hidden injection **не нужен**. Первый прогон `/seo-crawl` обнаружил что Tilda реально рендерит текстовый `<h1 class='tn-atom'>вы поступите <br>в вуз мечты</h1>` в DOM. Я раньше ошибся, утверждая что H1 отсутствует.
 **Почему:**
-- Tilda re-render требует менять Zero block и пересобирать весь экспорт — высокая трудоёмкость, риск сломать дизайн.
-- Visually-hidden — стандартный паттерн, Google и screen-readers его обрабатывают как обычный H1.
-- sed-инъекция воспроизводима после каждого re-export.
-**Альтернативы:**
-- Принять отсутствие H1 — теряем keyword signal в DOM.
-- Tilda Zero block с текстовым H1 — правильно, но дорого. Для phase 2 если запустим content hub.
+- WebFetch summary первоначально вернул `H1: MISSING`, но это был артефакт обработки 4.7 MB HTML моделью — реальный grep по локальному файлу подтвердил: H1 есть, 1 штука, корректная иерархия (1 H1 / 17 H2 / 11 H3).
 **Последствия:**
-- В `mapping.md → H1 fix` зафиксирован конкретный sed.
-- После каждого Tilda re-export → запускать sed перед коммитом (manual checklist пункт).
-- Если правок post-export станет больше — завести `seo/scripts/post-export.sh`.
-**Кто принял:** agent (предложил, Lev одобрил рамкой «сделай лучше»).
-**Когда пересматривать:** Если решим pivot с Tilda на собственный layer (Astro / Next.js).
+- Раздел `mapping.md → H1 fix` (visually-hidden injection) удалён.
+- Новая проблема — H1 без primary keyword. Решается переписыванием существующего H1 текста (либо в Tilda Zero-block, либо sed-replace по уникальному `field='tn_text_1752245550869'`).
+- В `mapping.md → H1 keyword fix` теперь конкретный sed под этот случай.
+- Anti-pattern alert: **WebFetch на больших Tilda-HTML возвращает unreliable результат — всегда verify через локальный grep**.
+**Кто принял:** agent (нашёл при тестовом прогоне), Lev узнает из этого decision log.
+**Когда пересматривать:** Если решим переписать H1 либо в Tilda, либо через sed — соответствующий новый decision запись.
 
 ---
 
@@ -157,3 +153,4 @@
 
 - ⚠️ **Не повторять test placeholder в production без timer** — `РЕМАРКЕТИНГ` остался видимым на CloudFront-direct >24ч. В будущем — либо feature flag, либо явный TTL.
 - ⚠️ **Не пушить с `LevAvdoshin-Truv`** — у него нет прав на этот репо. `gh auth switch --user LevAvdoshin` каждый раз перед push.
+- ⚠️ **WebFetch unreliable на больших Tilda-HTML** — 4.7 MB страница вернула `MISSING` на все meta-теги через model-summary, хотя теги присутствуют. Verify через локальный grep по `page62702763.html` когда target — наш сайт. Можно пользоваться WebFetch для конкурентов где локального файла нет, но проверять output через `grep -o '<title>'` если возможно.

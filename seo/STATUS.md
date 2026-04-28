@@ -22,9 +22,10 @@
 - [ ] **Sitemap → почистить до `/`** — 6 из 7 URL отдают 404. Команда: см. `mapping.md → Top Priorities`.
 - [ ] **`<title>` → вернуть с `РЕМАРКЕТИНГ`** на боевой текст. Lev назначает.
 
-### 🔴 This sprint
+### 🟡 This sprint
 
-- [ ] **H1 inject** — конкретный sed в `mapping.md → H1 fix`.
+- [ ] **H1 текст под primary keyword** — H1 в DOM есть («вы поступите в вуз мечты»), но без «США». Подробности в `mapping.md → H1 keyword fix`.
+- [ ] **Yandex verification check** — meta в формате `mailru-domain`, проверить что Yandex.Webmaster property всё-таки подтверждена.
 
 ### 🟡 Plan
 
@@ -48,7 +49,8 @@
 
 - ✅ **2026-04-27** — Domain transfer complete, NS switched
 - ✅ **2026-04-27** — SEO toolkit добавлен (commits `d45a311`, `1b5cc80`, `e791baa`)
-- ✅ **2026-04-27** — Toolkit подрезан до реального scope: 5 команд, 5 main docs (commit pending)
+- ✅ **2026-04-27** — Toolkit подрезан до реального scope: 5 команд, 5 main docs (`7a9fb52`)
+- ✅ **2026-04-27** — Первый `/seo-crawl` прогон. Findings: H1 в DOM существует (был неправильный assumption), JSON-LD валидны (3 блока), word count ~9600, sitemap 6/7 = 404. Отчёт: `seo/reports/seo-crawl-2026-04-27.md`
 
 ## Когда обновлять
 
